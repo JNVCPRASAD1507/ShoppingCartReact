@@ -14,7 +14,7 @@ const CartPage = ({ cart, updateQuantity, removeItem }) => {
         ⬅ Back To Home
       </Link>
 
-      <h1>Your Cart</h1>
+      <h1>Your Cart </h1>
 
       {cart.length > 0 ? (
         <>

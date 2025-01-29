@@ -425,16 +425,16 @@
   font-size: 24px;
   font-weight: bold;
   color: #333;
-  animation: marquee 10s linear infinite; /* Adjust time for speed */
+  animation: marquee 15s linear infinite; /* Adjust time for speed */
 }
 
 /* Keyframes for marquee animation */
 @keyframes marquee {
   from {
-    transform: translateX(200%); /* Start off-screen to the right */
+    transform: translateX(80%); /* Start off-screen to the right */
   }
   to {
-    transform: translateX(-120%); /* Move off-screen to the left */
+    transform: translateX(-50%); /* Move off-screen to the left */
   }
 }
 .marquee:hover {
@@ -454,3 +454,116 @@
   background-color: #f9e5ce;
 }
 
+.section {
+  width: 1540px;
+  height: 500px; /* Sets the height of the section */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white; /* Light background for aesthetics */
+  cursor: pointer;
+}
+
+.carousel-container {
+  width: 1540px;
+  height: 500px; 
+ 
+}
+
+.carousel-container .slick-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; 
+}
+
+.carousel-image {
+  width: 1540px;
+  height: 100%;
+  object-fit: cover; 
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+}
+.slide {
+  margin: 10px; /* Adds a margin around each slide */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add shadow for better visuals */
+  border-radius: 20px; /* Optional: Rounds the corners of the slides */
+  overflow: hidden; /* Ensures content doesn't overflow rounded corners */
+}
+.section {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.carousel-container {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.carousel-container img {
+  width: 100%; /* Make images responsive */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover;
+}
+
+/* Media queries for responsiveness */
+
+/* Small devices (up to 576px) */
+@media (max-width: 576px) {
+  .carousel-container img {
+    height: 250px; /* Adjust height for smaller screens */
+  }
+}
+
+/* Medium devices (577px to 768px) */
+@media (max-width: 768px) {
+  .carousel-container img {
+    height: 300px; /* Adjust height for medium screens */
+  }
+}
+
+/* Large devices (769px to 992px) */
+@media (max-width: 992px) {
+  .carousel-container img {
+    height: 400px; /* Adjust height for larger screens */
+  }
+}
+
+/* Extra-large devices (993px and above) */
+@media (min-width: 993px) {
+  .carousel-container img {
+    height: 500px; /* Default height for large screens */
+  }
+}
+
+/* Small devices (up to 576px) */
+@media (max-width: 576px) {
+  .card {
+    height: 100px; /* Adjust height for smaller screens */
+  }
+}
+
+/* Medium devices (577px to 768px) */
+@media (max-width: 768px) {
+  .card{
+    height: 200px; /* Adjust height for medium screens */
+  }
+}
+
+/* Large devices (769px to 992px) */
+@media (max-width: 992px) {
+  .card {
+    width: 200px;
+    height: 300px; /* Adjust height for larger screens */
+  }
+}
+
+/* Extra-large devices (993px and above) */
+@media (min-width: 993px) {
+  .card {
+    width: 200px;
+    height: 400px; /* Default height for large screens */
+  }
+}

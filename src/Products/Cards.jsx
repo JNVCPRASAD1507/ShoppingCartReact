@@ -1,4 +1,4 @@
-const data = [
+export const data = [
   {
     "_id": "66cdc48c8c198c3f7c3c31f2",
     "name": "Rice,atta and dals",
@@ -723,4 +723,54 @@ const data = [
   }
 ]
 
-export default data;
+export const Data = [
+  {
+    "_id": "66cf01559186e53472b23cdb",
+    "name": "Dry Fruits and nuts",
+    "URL": "dry-fruits-and-nuts",
+    "superCategoryId": "66cdb9a94740b2cc1bbdc002",
+    "superCategory": "Supermart",
+    "superCategoryUrl": "supermart",
+    "categoryId": "66cdc48d8c198c3f7c3c3204",
+    "category": "Dry fruits,oils and masalas",
+    "categoryUrl": "dry-fruits,oils-and-masalas",
+    "DeskImg": "https://res.cloudinary.com/dexterous-technology/image/upload/v1725451434/Gourmia-Website-Banners-2023-4_damtvu.jpg",
+    "MblImg": "https://res.cloudinary.com/dexterous-technology/image/upload/v1725451434/Gourmia-Website-Banners-2023-4_damtvu.jpg",
+    "show": false,
+    "createdAt": "2024-08-28T10:52:05.569Z",
+    "__v": 0
+  },
+  {
+    "_id": "66cf01e0a723848b5d583f71",
+    "name": "Fish and seafood",
+    "URL": "fish-and-seafood",
+    "superCategoryId": "66cdb9a94740b2cc1bbdc004",
+    "superCategory": "Non-veg",
+    "superCategoryUrl": "non-veg",
+    "categoryId": "66cdc48d8c198c3f7c3c31f8",
+    "category": "Fish & seafood",
+    "categoryUrl": "fish--seafood",
+    "DeskImg": "https://res.cloudinary.com/dexterous-technology/image/upload/v1725451415/Meat_Banner_1444x500_pvei4s.jpg",
+    "MblImg": "https://res.cloudinary.com/dexterous-technology/image/upload/v1725451415/Meat_Banner_1444x500_pvei4s.jpg",
+    "show": false,
+    "createdAt": "2024-08-28T10:54:24.452Z",
+    "__v": 0
+  },
+  {
+    "_id": "66cf020ba723848b5d583fd3",
+    "name": "Fresh vegetables",
+    "URL": "fresh-vegetables",
+    "superCategoryId": "66cdb9aa4740b2cc1bbdc006",
+    "superCategory": "Vegetables & fruits",
+    "superCategoryUrl": "vegetables-fruits",
+    "categoryId": "66cdc48f8c198c3f7c3c3246",
+    "category": "Fresh vegetables",
+    "categoryUrl": "fresh-vegetables",
+    "DeskImg": "https://res.cloudinary.com/dexterous-technology/image/upload/v1725444018/clarityVegetable_zcukxb.png",
+    "MblImg": "https://res.cloudinary.com/dexterous-technology/image/upload/v1725444018/clarityVegetable_zcukxb.png",
+    "show": false,
+    "createdAt": "2024-08-28T10:55:07.956Z",
+    "__v": 0
+  }
+]
+

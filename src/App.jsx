@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
 import Card from "./Components/comp";
-import data from "./Products/Cards";
+import { data } from "./Products/Cards";
 import CartPage from "./Components/cartpage";
+import Carousel from "./Components/carousel";
+// import { Margin } from "@mui/icons-material";
 
 const App = () => {
   const [cart, setCart] = useState([]); // State to manage items in the cart
@@ -39,7 +41,7 @@ const App = () => {
   // Add item to the cart
   const addToCart = (item) => {
     const existingItem = cart.find((cartItem) => cartItem._id === item._id);
-  
+
     if (existingItem) {
       // Increment quantity if item already exists
       setCart(
@@ -54,7 +56,7 @@ const App = () => {
       setCart([...cart, item]);
     }
   };
-  
+
 
   return (
     <div>
@@ -62,9 +64,12 @@ const App = () => {
         {/* Conditionally render the marquee only on the store page */}
         {location.pathname === "/" && (
           <div className="marquee-container">
-            <h1 className="marquee">KingKsanGhar where u can get the best product....</h1>
+            <h1 className="marquee">🛒✨ Welcome to my cart – Grab the Best Deals on Groceries, Fresh Vegetables, Dry Fruits, and More! 🚀🎉 Shop Now & Save Big! 🛍️💰  </h1>
           </div>
         )}
+
+        {/* <div >  <Carousel /> </div> */}
+        {location.pathname !== "/cart" && <Carousel />}
 
         {/* Conditionally render the cart icon */}
         {location.pathname !== "/cart" && (
@@ -87,8 +92,10 @@ const App = () => {
             path="/"
             element={
               <>
-                <h1>STORE</h1>
-                <div className="app">
+
+
+                {/* <h1>STORE</h1> */}
+                <div className="app" style={{ margin: "20px" }}>
                   {data.map((item) => (
                     <Card key={item._id} data={item} addToCart={addToCart} />
                   ))}

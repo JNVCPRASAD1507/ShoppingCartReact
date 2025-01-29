@@ -14,6 +14,8 @@ const Card = ({ data, addToCart }) => {
   };
 
   return (
+    <>
+
     <div className="card">
       <div className="card-image">
         <img src={data.mobileImage} alt={data.name} />
@@ -37,7 +39,9 @@ const Card = ({ data, addToCart }) => {
         </button>
       </div>
     </div>
+    </>
   );
 };
+
 
 export default Card;
