@@ -59,7 +59,7 @@ const App = () => {
 
 
   return (
-    <div>
+    <div className="mobileView">
       <div className="main-bg">
         {/* Conditionally render the marquee only on the store page */}
         {location.pathname === "/" && (
@@ -95,7 +95,7 @@ const App = () => {
 
 
                 {/* <h1>STORE</h1> */}
-                <div className="app" style={{ margin: "20px" }}>
+                <div className="app">
                   {data.map((item) => (
                     <Card key={item._id} data={item} addToCart={addToCart} />
                   ))}

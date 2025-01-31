@@ -1,6 +1,7 @@
 /* App Container */
 .app {
     display: flex; /* Enables flexbox layout */
+    flex: content;
     flex-wrap: wrap; /* Allows wrapping to the next row for responsiveness */
     gap: 20px; /* Adds spacing between cards */
     justify-content: center; /* Center aligns the cards horizontally */
@@ -506,64 +507,92 @@
   width: 100%; /* Make images responsive */
   height: auto; /* Maintain aspect ratio */
   object-fit: cover;
+
+.mobileView{
+  display: flex; 
+    flex: content;
+    flex-wrap: wrap;
+    gap: 20px; 
+    justify-content: center; 
+    padding: 20px; 
+  }
 }
-
-/* Media queries for responsiveness */
-
-/* Small devices (up to 576px) */
-@media (max-width: 576px) {
+/* 📱 Small Devices (Up to 576px) */
+@media (max-width: 576px) and (orientation: portrait) {
   .carousel-container img {
-    height: 250px; /* Adjust height for smaller screens */
+    height: 200px;
+  }
+  .mobile-View {
+    height: 100px;
   }
 }
 
-/* Medium devices (577px to 768px) */
-@media (max-width: 768px) {
+@media (max-width: 576px) and (orientation: landscape) {
   .carousel-container img {
-    height: 300px; /* Adjust height for medium screens */
+    height: 150px;
+  }
+  .mobile-View {
+    height: 80px;
   }
 }
 
-/* Large devices (769px to 992px) */
-@media (max-width: 992px) {
+/* 📲 Medium Devices (577px to 768px) */
+@media (min-width: 577px) and (max-width: 768px) and (orientation: portrait) {
   .carousel-container img {
-    height: 400px; /* Adjust height for larger screens */
+    height: 300px;
+  }
+  .mobile-View {
+    height: 200px;
   }
 }
 
-/* Extra-large devices (993px and above) */
-@media (min-width: 993px) {
+@media (min-width: 577px) and (max-width: 768px) and (orientation: landscape) {
   .carousel-container img {
-    height: 500px; /* Default height for large screens */
+    height: 220px;
+  }
+  .mobile-View {
+    height: 150px;
   }
 }
 
-/* Small devices (up to 576px) */
-@media (max-width: 576px) {
-  .card {
-    height: 100px; /* Adjust height for smaller screens */
+/* 💻 Large Devices (769px to 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) and (orientation: portrait) {
+  .carousel-container img {
+    height: 350px;
   }
-}
-
-/* Medium devices (577px to 768px) */
-@media (max-width: 768px) {
-  .card{
-    height: 200px; /* Adjust height for medium screens */
-  }
-}
-
-/* Large devices (769px to 992px) */
-@media (max-width: 992px) {
-  .card {
+  .mobile-View {
     width: 200px;
-    height: 300px; /* Adjust height for larger screens */
+    height: 300px;
   }
 }
 
-/* Extra-large devices (993px and above) */
-@media (min-width: 993px) {
-  .card {
-    width: 200px;
-    height: 400px; /* Default height for large screens */
+@media (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {
+  .carousel-container img {
+    height: 320px;
+  }
+  .mobile-View {
+    width: 180px;
+    height: 280px;
+  }
+}
+
+/* 🖥️ Extra-large Devices (1025px and Above) */
+@media (min-width: 1025px) and (orientation: portrait) {
+  .carousel-container img {
+    height: 500px;
+  }
+  .mobile-View {
+    width: 250px;
+    height: 400px;
+  }
+}
+
+@media (min-width: 1025px) and (orientation: landscape) {
+  .carousel-container img {
+    height: 450px;
+  }
+  .mobile-View {
+    width: 280px;
+    height: 380px;
   }
 }
