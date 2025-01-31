@@ -89,10 +89,10 @@
 // export default CartPage;
 
 
-
 import React from "react";
 import { Link } from "react-router-dom";
-import { Box, Grid, Button, Typography, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from "@mui/material";
+import { Box, Button, Typography, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from "@mui/material";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 const CartPage = ({ cart, updateQuantity, removeItem }) => {
   const overallTotal = cart.reduce(
@@ -111,15 +111,22 @@ const CartPage = ({ cart, updateQuantity, removeItem }) => {
       <Typography variant="h4" gutterBottom>Your Cart</Typography>
 
       {cart.length > 0 ? (
-        <>
+        <Box sx={{ overflowX: "auto" }}>
           <TableContainer component={Paper}>
-            <Table sx={{ minWidth: 650 }} aria-label="cart table">
+            <Table 
+              sx={{ 
+                minWidth: 650, 
+                display: { xs: "block", sm: "table" }, // Show table on larger screens, block on mobile
+                overflowX: "auto"
+              }} 
+              aria-label="cart table"
+            >
               <TableHead>
                 <TableRow>
                   <TableCell>Image</TableCell>
                   <TableCell>Item Name</TableCell>
-                  <TableCell>Price</TableCell>
                   <TableCell>Quantity</TableCell>
+                  <TableCell>Price</TableCell>
                   <TableCell>Total</TableCell>
                   <TableCell>Actions</TableCell>
                 </TableRow>
@@ -135,33 +142,76 @@ const CartPage = ({ cart, updateQuantity, removeItem }) => {
                       />
                     </TableCell>
                     <TableCell>{item.name}</TableCell>
-                    <TableCell>${item.price}</TableCell>
                     <TableCell>
-                      <Button
-                        onClick={() => updateQuantity(item._id, item.quantity - 1)}
-                        disabled={item.quantity <= 1}
-                        sx={{ marginRight: 1 }}
-                        variant="contained"
+                      <Box
+                        sx={{
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          gap: 1,
+                          flexWrap: "nowrap",
+                        }}
                       >
-                        -
-                      </Button>
-                      <Typography variant="body1" component="span">{item.quantity}</Typography>
-                      <Button
-                        onClick={() => updateQuantity(item._id, item.quantity + 1)}
-                        sx={{ marginLeft: 1 }}
-                        variant="contained"
-                      >
-                        +
-                      </Button>
+                        <Button
+                          onClick={() => updateQuantity(item._id, item.quantity - 1)}
+                          disabled={item.quantity <= 1}
+                          sx={{
+                            minWidth: "30px",
+                            padding: "5px",
+                            fontSize: "18px",
+                            "@media (max-width: 600px)": {
+                              minWidth: "25px",
+                              fontSize: "14px",
+                            },
+                          }}
+                          variant="contained"
+                        >
+                          -
+                        </Button>
+
+                        <Typography
+                          variant="body1"
+                          component="span"
+                          sx={{
+                            width: "40px",
+                            textAlign: "center",
+                            "@media (max-width: 600px)": {
+                              fontSize: "14px",
+                            },
+                          }}
+                        >
+                          {item.quantity}
+                        </Typography>
+
+                        <Button
+                          onClick={() => updateQuantity(item._id, item.quantity + 1)}
+                          sx={{
+                            minWidth: "30px",
+                            padding: "5px",
+                            fontSize: "18px",
+                            "@media (max-width: 600px)": {
+                              minWidth: "25px",
+                              fontSize: "14px",
+                            },
+                          }}
+                          variant="contained"
+                        >
+                          +
+                        </Button>
+                      </Box>
                     </TableCell>
+                    <TableCell>${(item.price).toFixed(2)}</TableCell>
                     <TableCell>${(item.price * item.quantity).toFixed(2)}</TableCell>
                     <TableCell>
                       <Button
                         onClick={() => removeItem(item._id)}
                         color="error"
-                        variant="outlined"
+                        sx={{
+                          minWidth: "40px",
+                          padding: "5px",
+                        }}
                       >
-                        Remove
+                        <DeleteIcon />
                       </Button>
                     </TableCell>
                   </TableRow>
@@ -169,16 +219,18 @@ const CartPage = ({ cart, updateQuantity, removeItem }) => {
               </TableBody>
             </Table>
           </TableContainer>
-          <Box sx={{ marginTop: 2 }}>
-            <Typography variant="h6">Overall Total: ${overallTotal.toFixed(2)}</Typography>
-          </Box>
-        </>
+        </Box>
       ) : (
         <Typography variant="h6">Your cart is empty.</Typography>
+      )}
+
+      {cart.length > 0 && (
+        <Box sx={{ marginTop: 2 }}>
+          <Typography variant="h6">Overall Total: ${overallTotal.toFixed(2)}</Typography>
+        </Box>
       )}
     </Box>
   );
 };
 
 export default CartPage;
-
