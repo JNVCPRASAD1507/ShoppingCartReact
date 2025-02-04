@@ -1,0 +1,40 @@
+{
+  "users": [
+    {
+      "id": "6e27",
+      "username": "prasad2",
+      "password": "prasad2",
+      "gender": "male",
+      "mobile": "9632587419"
+    },
+    {
+      "id": "39b9",
+      "username": "bannu",
+      "password": "bannu1",
+      "gender": "male",
+      "mobile": "9876543219"
+    },
+    {
+      "id": "9f66",
+      "username": "ram",
+      "password": "ram123",
+      "gender": "male",
+      "mobile": "8796541239"
+    },
+    {
+      "id": "da2e",
+      "username": "tej",
+      "password": "123456",
+      "gender": "male",
+      "mobile": "9632587419"
+    },
+    {
+      "id": "c88c",
+      "username": "ravana",
+      "password": "ravana",
+      "gender": "male",
+      "mobile": "9390248589"
+    }
+  ],
+  "cart": []
+}

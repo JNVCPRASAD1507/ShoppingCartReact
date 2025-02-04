@@ -49,11 +49,13 @@
 // export default Card;
 
 
-import React, { useState } from "react";
+import React, { useState , useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { Card, CardContent, CardMedia, Typography, Button, Box, IconButton } from "@mui/material";
 import { Add, Remove } from "@mui/icons-material";
 
 const ProductCard = ({ data, addToCart }) => {
+  const navigate = useNavigate();
   const [quantity, setQuantity] = useState(0);
   const placeholderImage = "https://via.placeholder.com/150";
 
@@ -66,6 +68,16 @@ const ProductCard = ({ data, addToCart }) => {
       setQuantity(0);
     }
   };
+
+  useEffect(() => {
+    // Check if user is authenticated
+    const isAuthenticated = localStorage.getItem("isAuthenticated");
+
+    if (!isAuthenticated) {
+      // If not authenticated, redirect to sign-in page
+      navigate("/signin");
+    }
+  }, [navigate]);
 
   return (
     <Card
