@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Routes, Route, useNavigate, useLocation ,Navigate } from "react-router-dom";
-import { AppBar, Toolbar, IconButton, Badge, Container, Typography, Box, Grid, Button } from "@mui/material";
+import { AppBar, Toolbar, IconButton, Badge, Container, Typography, Box, Grid2, Button } from "@mui/material";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import Card from "./Components/comp";
 import { data } from "./Products/Cards";
@@ -104,13 +104,13 @@ const App = () => {
     <Route path="/productPage" element={
       <>
         <Carousel />
-        <Grid container spacing={2} justifyContent="center">
+        <Grid2 container spacing={2} justifyContent="center">
           {data.map((item) => (
-            <Grid item xs={6} sm={6} md={4} lg={3} key={item._id}>
+            <Grid2 item xs={6} sm={6} md={4} lg={3} key={item._id}>
               <Card data={item} addToCart={addToCart} />
-            </Grid>
+            </Grid2>
           ))}
-        </Grid>
+        </Grid2>
       </>
     } />
     

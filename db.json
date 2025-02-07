@@ -34,6 +34,34 @@
       "password": "ravana",
       "gender": "male",
       "mobile": "9390248589"
+    },
+    {
+      "id": "7338",
+      "username": "babu",
+      "password": "babu123",
+      "gender": "male",
+      "mobile": "9390248589"
+    },
+    {
+      "id": "fe36",
+      "username": "chinna",
+      "password": "chinna",
+      "gender": "male",
+      "mobile": "9632587419"
+    },
+    {
+      "id": "9907",
+      "username": "priya",
+      "password": "priya1",
+      "gender": "female",
+      "mobile": "9390248589"
+    },
+    {
+      "id": "7585",
+      "username": "charan",
+      "password": "charan",
+      "gender": "male",
+      "mobile": "9876543219"
     }
   ],
   "cart": []

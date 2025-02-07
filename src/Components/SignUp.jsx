@@ -27,7 +27,7 @@ const SignUp = () => {
       if (response.ok) {
         const data = await response.json();
         console.log("User added successfully:", data);
-        alert("Signup successful!");
+        // alert("Signup successful!");
 
       
       localStorage.setItem("isAuthenticated", "true");
@@ -58,6 +58,7 @@ const SignUp = () => {
           initialValues={{ username: "", password: "", gender: "", mobile: "" }}
           validationSchema={validationSchema}
           onSubmit={handleSubmit}
+          
         >
           {({ values, errors, touched, handleChange, handleBlur, isSubmitting }) => (
             <Form>
