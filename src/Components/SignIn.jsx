@@ -104,10 +104,10 @@ const SignIn = () => {
   const [loading, setLoading] = useState(true); 
 
   useEffect(() => {
-    fetch("/db.json")
+    fetch("https://shoppingcart-backend-5lrv.onrender.com/users")
       .then((response) => response.json())
       .then((data) => {
-        setUsers(data.users);
+        setUsers(data);
         setLoading(false);
       })
       .catch((error) => {
