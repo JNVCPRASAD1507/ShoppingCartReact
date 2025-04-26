@@ -62,6 +62,13 @@
       "password": "charan",
       "gender": "male",
       "mobile": "9876543219"
+    },
+    {
+      "id": "252e",
+      "username": "charan",
+      "password": "charan",
+      "gender": "male",
+      "mobile": "9876541239"
     }
   ],
   "cart": []
